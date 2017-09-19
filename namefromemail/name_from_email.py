@@ -13,10 +13,14 @@ searching="@"
 searching2="."
 
 def is_valid_email(email_address):
+    end = email_address.index(searching)
     for i in email_address:
         if searching in email_address:
             return(True)
-
+        elif searching2 in email_address[:end]:
+            return(True)
+        else:
+            return(False)
 
 def name_from_email(email_address):
     if is_valid_email(email_address):
